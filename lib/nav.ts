@@ -10,7 +10,7 @@ export type NavKey =
 
 export const NAV_ITEMS: { key: NavKey; href: string; label: string }[] = [
   { key: "home", href: "/home", label: "Home" },
-  { key: "meeting", href: "/meeting", label: "Meetings" },
+  { key: "meeting", href: "/meetings", label: "Meetings" },
   { key: "recordings", href: "/recordings", label: "Recordings" },
   { key: "worklog", href: "/worklog", label: "Worklog" },
   { key: "tasks", href: "/tasks", label: "My Tasks" },

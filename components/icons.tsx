@@ -1,3 +1,5 @@
+import { SQUIGGLE_PATH } from "./squiggle-path";
+
 const SPARKLE_PATH =
   "M12 4c.9 4.4 3.6 7.1 8 8-4.4.9-7.1 3.6-8 8-.9-4.4-3.6-7.1-8-8 4.4-.9 7.1-3.6 8-8Z";
 
@@ -125,7 +127,7 @@ export function TrashIcon({ size = 14 }: { size?: number }) {
 export function BrandMarkIcon({
   width = 38,
   height = 20,
-  strokeWidth = 9,
+  strokeWidth = 6,
   className,
 }: {
   width?: number;
@@ -135,12 +137,7 @@ export function BrandMarkIcon({
 }) {
   return (
     <svg className={className} width={width} height={height} viewBox="0 0 200 100" fill="none" aria-hidden="true">
-      <path
-        d="M14 64 C 22 30, 50 24, 54 46 C 58 68, 30 76, 28 56 C 26 38, 52 28, 68 38 C 84 48, 74 68, 92 64 C 112 59, 106 34, 130 38 C 158 43, 158 52, 190 48"
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-      />
+      <path d={SQUIGGLE_PATH} stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

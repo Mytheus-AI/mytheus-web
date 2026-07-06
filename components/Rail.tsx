@@ -7,6 +7,7 @@ import { NAV_ITEMS } from "@/lib/nav";
 function isActive(pathname: string, href: string) {
   if (pathname === href) return true;
   if (href === "/recordings" && pathname === "/transcript") return true;
+  if (href === "/meetings" && pathname.startsWith("/meetings/")) return true;
   return false;
 }
 
@@ -65,7 +66,6 @@ const RAIL_ICONS: Record<string, React.ReactNode> = {
 
 export default function Rail() {
   const pathname = usePathname();
-  const inMeeting = pathname === "/meeting";
   const mainItems = NAV_ITEMS.filter((i) => i.key !== "settings");
   const settingsItem = NAV_ITEMS.find((i) => i.key === "settings")!;
 
@@ -99,14 +99,6 @@ export default function Rail() {
       >
         {RAIL_ICONS.settings}
       </Link>
-      {inMeeting && (
-        <Link href="/home" className="rail-btn is-leave tip-right tap meeting-only" data-tip="Leave meeting" aria-label="Leave meeting">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M14 4H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7" />
-            <path d="m17 8 4 4-4 4M21 12H10" />
-          </svg>
-        </Link>
-      )}
     </nav>
   );
 }

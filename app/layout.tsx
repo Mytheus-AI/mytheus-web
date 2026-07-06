@@ -4,8 +4,6 @@ import "./globals.css";
 import "./mytheus.css";
 import { ToastProvider } from "@/contexts/ToastContext";
 import { MeetingUIProvider } from "@/contexts/MeetingUIContext";
-import AppBar from "@/components/AppBar";
-import Rail from "@/components/Rail";
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
@@ -43,15 +41,7 @@ export default function RootLayout({
     <html lang="en" className={`${hanken.variable} ${newsreader.variable} ${fraunces.variable}`}>
       <body>
         <ToastProvider>
-          <MeetingUIProvider>
-            <div className="app">
-              <AppBar />
-              <div className="app-row">
-                <Rail />
-                <main className="main">{children}</main>
-              </div>
-            </div>
-          </MeetingUIProvider>
+          <MeetingUIProvider>{children}</MeetingUIProvider>
         </ToastProvider>
       </body>
     </html>
